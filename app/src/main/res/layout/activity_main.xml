@@ -9,13 +9,19 @@
     <TextView
         android:id="@+id/tvNameApp"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="@string/app_name" />
+        android:layout_height="60dp"
+        android:text="@string/app_name"
+        android:textSize="30dp"
+        android:textColor="#A31717"
+        android:gravity="center"
+        />
     <TextView
         android:id="@+id/tvRezult"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        tools:text="TextView" />
+        android:layout_height="150dp"
+        tools:text="VICMLX"
+        android:textSize="20dp"
+        android:textColor="#98910C"/>
 
     <LinearLayout
         android:id="@+id/llKeyboard"
@@ -29,19 +35,22 @@
             android:id="@+id/tlNumbersToDial"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.75">
+            android:layout_weight="0.3">
             <TableRow android:layout_weight="1">
                 <Button
+                    android:id="@+id/bthOne"
                     android:layout_weight="1"
                     android:text="I"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
                     />
                 <Button
+                    android:id="@+id/bthOneHundred"
                     android:layout_weight="1"
                     android:text="C"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
                     />
                 <Button
+                    android:id="@+id/bthPlus"
                     android:layout_weight="1"
                     android:text="+"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
@@ -49,16 +58,19 @@
             </TableRow>
             <TableRow android:layout_weight="1">
                 <Button
+                    android:id="@+id/bthfive"
                     android:layout_weight="1"
                     android:text="V"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
                     />
                 <Button
+                    android:id="@+id/bthFiveHundred"
                     android:layout_weight="1"
                     android:text="D"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
                     />
                 <Button
+                    android:id="@+id/bthMinus"
                     android:layout_weight="1"
                     android:text="-"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
@@ -66,16 +78,19 @@
             </TableRow>
             <TableRow android:layout_weight="1">
                 <Button
+                    android:id="@+id/bthTen"
                     android:layout_weight="1"
                     android:text="X"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
                     />
                 <Button
+                    android:id="@+id/bthThousand"
                     android:layout_weight="1"
                     android:text="M"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
                     />
                 <Button
+                    android:id="@+id/bthMultiply"
                     android:layout_weight="1"
                     android:text="*"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
@@ -83,16 +98,19 @@
             </TableRow>
             <TableRow android:layout_weight="1">
                 <Button
+                    android:id="@+id/bthFifty"
                     android:layout_weight="1"
                     android:text="L"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
                     />
                 <Button
+                    android:id="@+id/bthErase"
                     android:layout_weight="1"
                     android:text="CE"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
                     />
                 <Button
+                    android:id="@+id/bthDivide"
                     android:layout_weight="1"
                     android:text="/"
                     style="@style/TextAppearance.AppCompat.buttonNumber"
@@ -101,10 +119,8 @@
         </TableLayout>
         <Button
             android:id="@+id/btnEqually"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/shape_round"
-            android:layout_weight="0.25"
-            android:text="=" />
+            android:layout_weight="1"
+            android:text="="
+            style="@style/TextAppearance.AppCompat.buttonNumber"/>
     </LinearLayout>
 </LinearLayout>
