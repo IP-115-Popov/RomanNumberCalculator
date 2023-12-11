@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val tvRezult: TextView = binding.tvRezult
         val btnEqually:Button = binding.btnEqually
+        val bthErase:Button = binding.bthErase
 
         val bthOne: Button = binding.bthOne
         val bthOneHundred:Button = binding.bthOneHundred
@@ -29,19 +30,30 @@ class MainActivity : AppCompatActivity() {
         val bthThousand:Button = binding.bthThousand
         val bthMultiply:Button = binding.bthMultiply
         val bthFifty:Button = binding.bthFifty
-        val bthErase:Button = binding.bthErase
         val bthDivide:Button = binding.bthDivide
-
-        var equation: String = ""
 
         val numericButton = setOf(
             binding.bthOne, binding.bthOneHundred, binding.bthPlus, binding.bthFive, binding.bthFiveHundred,
-            binding.bthMinus,binding.bthTen,binding.bthThousand,binding.bthMultiply,binding.bthFifty, binding.bthErase,binding.bthDivide
+            binding.bthMinus,binding.bthTen,binding.bthThousand,binding.bthMultiply,binding.bthFifty, binding.bthDivide
         )
         for (button in numericButton)
             button.setOnClickListener {
-                equation += button.text.toString()
+                tvRezult.text = tvRezult.text.toString() + button.text.toString()
             }
+        btnEqually.setOnClickListener {
+            var equation = tvRezult.text.toString()
+            val numberList = equation.split(Regex("[+\\-*/]"))
 
+            val pattern = Regex("[ICVDXML]*([+\\-*/])[ICVDXML]*")
+            val matches = pattern.findAll(equation)
+
+            // Получение всех найденных operator в список
+            val operatorList = matches.map { it.groupValues[1] }.toList()
+
+            tvRezult.text = "\n"+numberList.toString()+"\n"+operatorList.toString()
+        }
+        bthErase.setOnClickListener {
+            tvRezult.text.toString()
+        }
     }
 }
