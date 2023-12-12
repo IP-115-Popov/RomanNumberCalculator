@@ -42,8 +42,7 @@ class MainActivity : AppCompatActivity() {
             }
         btnEqually.setOnClickListener {
             var equation = tvRezult.text.toString()
-            var rez = Сalculator.calculate(equation)
-            tvRezult.text = rez.toString()
+            tvRezult.text = ConvertRomanToInt.intToRoman(Сalculator.calculate(equation))
         }
         bthErase.setOnClickListener {
             tvRezult.text = ""

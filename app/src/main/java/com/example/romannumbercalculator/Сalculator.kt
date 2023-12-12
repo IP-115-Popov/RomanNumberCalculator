@@ -28,7 +28,7 @@ class Сalculator {
                 stackNumbers.add(ConvertRomanToInt.romanToInt(numberSequence.removeLast()))
                 stackOperations.add(operatorSequence.removeLast())
 
-                while (!numberSequence.isEmpty() && !stackOperations.isEmpty()) {
+                while (!numberSequence.isEmpty() && !operatorSequence.isEmpty()) {
                     stackNumbers.add(ConvertRomanToInt.romanToInt(numberSequence.removeLast()))
                     stackOperations.add(operatorSequence.removeLast()) //read next op
 
@@ -49,19 +49,19 @@ class Сalculator {
                         }
                         stackNumbers.add(rez)
                     }
-                    if (numberSequence.count() >= 1)
-                    {
-                        stackNumbers.add(ConvertRomanToInt.romanToInt(numberSequence.removeLast()))
-                        var curerntOp = stackOperations[stackOperations.count()-1]
-                        var arg1 = stackNumbers.removeLast()
-                        var arg2 = stackNumbers.removeLast()
-                        rez = when (curerntOp) {
-                            "+" -> arg1 + arg2
-                            "-" -> arg1 - arg2
-                            "*" -> arg1 * arg2
-                            "/" -> arg1 / arg2
-                            else -> 0
-                        }
+                }
+                if (numberSequence.size >= 1)
+                {
+                    stackNumbers.add(ConvertRomanToInt.romanToInt(numberSequence.removeLast()))
+                    var curerntOp = stackOperations[stackOperations.count()-1]
+                    var arg1 = stackNumbers.removeLast()
+                    var arg2 = stackNumbers.removeLast()
+                    rez = when (curerntOp) {
+                        "+" -> arg1 + arg2
+                        "-" -> arg1 - arg2
+                        "*" -> arg1 * arg2
+                        "/" -> arg1 / arg2
+                        else -> 0
                     }
                 }
             }

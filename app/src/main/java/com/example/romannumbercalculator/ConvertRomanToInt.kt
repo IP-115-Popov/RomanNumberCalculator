@@ -30,5 +30,21 @@ class ConvertRomanToInt {
 
             return result
         }
+        fun intToRoman(num: Int): String {
+            val values = listOf(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
+            val numerals = listOf("M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I")
+
+            var remaining = num
+            var result = ""
+
+            for (i in values.indices) {
+                while (remaining >= values[i]) {
+                    remaining -= values[i]
+                    result += numerals[i]
+                }
+            }
+
+            return result
+        }
     }
 }
